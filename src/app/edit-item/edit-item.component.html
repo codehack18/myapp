@@ -1,0 +1,38 @@
+<form [formGroup]="studentData">
+    <div class="container col-md-4 my-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" formControlName="name" placeholder="enter here name">
+        
+        <label for="class">Class</label>
+        <input type="text" class="form-control" formControlName="class" placeholder="enter here class">
+        
+        <label for="rollno">Roll No</label>
+        <input type="number" class="form-control" formControlName="rollno" placeholder="enter here roll no">
+        
+        <label for="age">Age</label>
+        <input type="number" class="form-control" formControlName="age" placeholder="enter here age">
+
+        <button type="button" class="btn btn-info mt-2" (click)="saveData()">Save</button>
+    </div>
+</form>
+
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Roll-No</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of classData">
+            <td>{{data.name}}</td>
+            <td>{{data.class}}</td>
+            <td>{{data.rollno}}</td>
+            <td>{{data.age}}</td>
+            <td><button type="submit" class="btn btn-danger sm" (click)="onCut(data)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

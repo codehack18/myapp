@@ -1,0 +1,10 @@
+<h2>Items</h2>
+
+<button class="btn btn-info" (click)="getValue()">Get</button><br><br>
+<button class="btn btn-success" (click)="setValue()">Set</button>
+
+<div *ngIf="session">
+  <h1>ID: {{session.id}}</h1>
+  <h1>Name: {{session.name}}</h1>
+</div>
+

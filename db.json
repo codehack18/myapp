@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstname": "Singh",
+      "lastname": "Bohra",
+      "email": "amit@gmail.com",
+      "password": "122546ftgf"
+    },
+    {
+      "firstName": "amit",
+      "lastName": "bohra",
+      "email": "amit@gmail.com",
+      "password": "12345amit",
+      "id": 2
+    },
+    {
+      "firstName": "riya",
+      "lastName": "bohra",
+      "email": "riyagmail.com",
+      "password": "riya143$",
+      "id": 3
+    },
+    {
+      "firstName": "Renu",
+      "lastName": "Bohra",
+      "email": "renu@gmail.com",
+      "password": "renu143$",
+      "id": 4
+    },
+    {
+      "firstName": "jiya",
+      "lastName": "bohra",
+      "email": "jiya@gmail.com",
+      "password": "12234hdgcdbs",
+      "id": 5
+    },
+    {
+      "firstName": "amit",
+      "lastName": "bora",
+      "email": "boraamit@gmail.com",
+      "password": "1234asdfg",
+      "id": 6
+    }
+  ]
+}

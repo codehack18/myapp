@@ -1,0 +1,28 @@
+<form [formGroup]="myForm">
+  <div class="col-md-4 container">
+    <h1>Sing Up</h1>
+
+    <label for="email"><b>First Name</b></label>
+    <input type="text" placeholder="Enter First Name" formControlName="firstName">
+    <div class="form-text text-danger mt-2"
+      *ngIf="firstName.errors?.['required'] && (firstName.dirty || firstName.touched)">please enter
+      firstName</div>
+
+    <label for="email"><b>Last Name</b></label>
+    <input type="text" placeholder="Enter Last Name" formControlName="lastName">
+    <div class="'form-text text-danger" *ngIf="lastName.errors?.['required'] && (lastName.dirty || lastName.touched)">
+      please enter lastname</div>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" formControlName="email">
+      <div class="form-text text-danger"
+      *ngIf="email.errors?.['email'] && (email.dirty || email.touched)">
+    please enter valid email</div>
+    
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" formControlName="password">
+
+    <button type="submit" class="btn btn-primary" (click)="onClick()">Submit</button>
+  </div>
+
+</form>

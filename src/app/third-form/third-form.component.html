@@ -1,0 +1,106 @@
+<div class="container mt-3">
+    <input class="form-control" type="text" placeholder="search" [(ngModel)]="searchText">
+    
+    <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Add Data
+    </button>
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <!-- <th>Id</th> -->
+          <th>Name</th>
+          <th>comment</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of userData | search: searchText">
+          <!-- <td>{{item.id}}</td> -->
+          <td>{{item.name}}</td>
+          <td>{{item.comment}}</td>
+          <td><button type="button" class="btn btn-danger sm" (click)="forDelete(item)">Delete</button></td>
+          <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBack">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Modal add -->
+  
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Add New Data</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form [formGroup]="userForm">
+  
+        <div class="modal-body">
+          <label for="exampleName">Name</label>
+          <input type="text" id="exampleName" class="form-control" formControlName="name">
+          
+       
+        </div>
+        <div class="modal-body">
+          <label for="exampleComm">Comment</label>
+          <input type="text" id="exampleComm" class="form-control" formControlName="comment">
+       
+        </div>
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addData()">save</button>
+        
+          <!-- <ul>
+            <li *ngFor="let data of datas">{{ data.name }}</li>
+          </ul> -->
+  
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Edit Model -->
+  
+  <div class="modal fade" id="staticBack" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Data</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form [formGroup]="userForm">
+  
+        <div class="modal-body">
+          <label for="exampleName">Name</label>
+          <input type="text" id="exampleName" class="form-control" formControlName="name">
+          
+       
+        </div>
+        <div class="modal-body">
+          <label for="exampleComm">Comment</label>
+          <input type="text" id="exampleComm" class="form-control" formControlName="comment">
+       
+        </div>
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">update</button>
+        
+          <!-- <ul>
+            <li *ngFor="let data of datas">{{ data.name }}</li>
+          </ul> -->
+  
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>

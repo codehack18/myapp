@@ -1,0 +1,94 @@
+<form [formGroup]="newForm" (ngSubmit)="getData()">
+    <div class="container row-4 mt-4">
+        <label for="form">Name</label>
+        <input type="text" id="form" class="form-control" formControlName="name" placeholder="enter the name">
+    
+        <label for="ema">Email</label>
+        <input type="text" id="ema" class="form-control" formControlName="email" placeholder="enter the email">
+
+        <label for="num">Number</label>
+        <input type="number" id="num" class="form-control" formControlName="number" placeholder="enter the number">
+
+        <label for="pass">Password</label>
+        <input type="text" id="pass" class="form-control" formControlName="password" placeholder="enter the password">
+
+        <button type="submit" class="btn btn-primary" (click)="subData()"> Submit</button><br><br>
+        <!-- <button type="submit" class="btn btn-primary" (click)="showData()">Show</button> -->
+        
+
+    </div>
+
+    
+</form>
+
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of usersData">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.number}}</td>
+            <td>{{user.password}}</td>
+            <td><button type="submit" class="btn btn-danger sm" (click)="reMove(user)">Rmove</button></td>
+             <!-- <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticData">Edit</button></td> -->
+        </tr>
+    </tbody>
+</table>
+
+<!-- Edit Model -->
+
+<!-- <div class="modal fade" id="staticData" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Add New Data</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+  
+        <div class="modal-body">
+          <label for="exampleName">Name</label>
+          <input type="text" id="exampleName" class="form-control" formControlName="name">
+          
+       
+        </div>
+        <div class="modal-body">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" formControlName="email">
+       
+        </div>
+        <div class="modal-body">
+          <label for="number">Number</label>
+          <input type="number" id="number" class="form-control" formControlName="number">
+       
+        </div>
+        <div class="modal-body">
+          <label for="password">Password</label>
+          <input type="text" id="password" class="form-control" formControlName="password">
+       
+        </div>
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">save</button>
+        
+          <ul>
+            <li *ngFor="let data of datas">{{ data.name }}</li>
+          </ul> -->
+  
+        <!-- </div>
+      </form>
+      </div>
+    </div>
+  </div> -->
+  
+  
